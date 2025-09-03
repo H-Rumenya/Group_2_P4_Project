@@ -1,5 +1,5 @@
 # Recommendation Systems Project
-!Alt Text/Recommendation_system.PNG
+![Alt text](images/Recommendation_system.PNG)
 
 ## 📄 Project Description
 
@@ -33,4 +33,73 @@ The project used the dataset, comprising four CSV files:
 - **ratings.csv**
 - **tags.csv**
 
- offers a comprehensive foundation for a robust movie recommendation system.
+The 4 datasets offer a comprehensive foundation for a robust movie recommendation system.
+
+### Movies.csv
+Structure
+-**Rows: 9,742**
+-**Columns: movieId, title, genres**
+Purpose
+Contains metadata about movies.
+Genres are useful for:
+**Content-based filtering (e.g., recommending similar genre movies)**
+-Genre-specific recommendations**
+-Enriching user profiles with genre preferences**
+
+### Ratings Dataset
+Structure
+-**Rows: 100,836**
+-**Columns: userId, movieId, rating, timestamp**
+Purpose
+**Core dataset for collaborative filtering.**
+Enables:
+-User-item interaction modeling**
+-Predicting ratings for unseen movies**
+-Building user-user or item-item similarity matrices**
+
+### Links Dataset
+Structure
+-**Rows: 9,742**
+-**Columns: movieId, imdbId, tmdbId**
+Purpose
+**Serves as a bridge to external metadat sources by mapping internal movieId to external databases (IMDb, TMDb).**
+Useful for:
+-Enriching movie metadata (e.g., posters, cast, reviews)**
+-Integrating with external APIs**
+-Improving user experience with richer content**
+
+### Tags dataset
+Structure
+**Rows: 3,683**
+**Columns: userId, movieId, tag, timestamp**
+Purpose
+**Captures user-generated tags for movies.**
+Tags provide semantic context (e.g., “funny”, “dark comedy”, “Will Ferrell”) that can be used to:
+-Enhance content-based filtering**
+-Profile user preferences**
+-Enable tag-based search**
+-Cluster movies by themes or genres**
+
+## Data Preprocessing
+1. *Merging*: The 4 datasets were merged to create one dataframe that will be used for analysis. the final dataframe had 102,677 rows and 10 columns. 
+2. *Dropping colums not in use*: Columns that would not be used during the modeling were dropped. These included 'tag', 'timestamp'
+3. *Handling of missing values*: Any rows that had missing values in  'userId', 'movieId', 'rating', 'title', 'genres' was dropped. while any missing value in 'imdbId' 'tmdbId' and 'timestamp_x' were filled with 0
+4. *Removal of duplicates* all duplicates were dropped. 
+5. *Fix inconsistencies*: This was done to ensure consistency in the datatypes. 
+6. *Scaling*: A scaler was applied to normalise numerical features such as 'ratings'
+7. *One-hot encoding*: This was done to create binary features 
+
+## Data Exploration
+
+
+
+## Modelling 
+
+
+## Evaluation
+
+
+## Findings and conclusions
+
+
+## Recommendations
