@@ -1,5 +1,5 @@
 # Recommendation Systems Project
-![Alt text](images/Recommendation_system.PNG)
+![Recommendation systems](images/Recommendation_system.PNG)
 
 ## 📄 Project Description
 
@@ -89,17 +89,60 @@ Tags provide semantic context (e.g., “funny”, “dark comedy”, “Will Fer
 6. *Scaling*: A scaler was applied to normalise numerical features such as 'ratings'
 7. *One-hot encoding*: This was done to create binary features 
 
-## Data Exploration
+## Visualizations
+### Rating Distribution
+![Rating Distribution](rating_distribution.png)
+Shows user rating behavior, with a bias toward higher ratings.
 
+### User Activity
+![User Activity](user_activity_distribution.png)
+Displays number of ratings per user, highlighting active vs. passive users.
 
+### Genre Distribution
+![Genre Distribution](genre_distribution.png)
+Breakdown of movie genres, showing dominance of Drama and Comedy.
 
-## Modelling 
+## Modeling Techniques
+Implemented and tuned three recommendation models:
+- **KNN (Collaborative Filtering)**: Based on user similarity
+- **SVD (Matrix Factorization)**: Captures latent features and biases
+- **ALS (Implicit Feedback)**: Optimized for sparse matrices
 
+## Evaluation Metrics
+- **RMSE**: Measures rating prediction accuracy
+- **Precision@10 & Recall@10**: Evaluate relevance of top-N recommendations
 
-## Evaluation
+### Model Performance Comparison
+#### RMSE
+![RMSE Comparison](rmse_comparison.png)
 
+#### Precision@10
+![Precision Comparison](precision_comparison.png)
 
-## Findings and conclusions
+#### Recall@10
+![Recall Comparison](recall_comparison.png)
 
+## Key Findings
+- **SVD** outperformed other models with lowest RMSE and highest precision/recall.
+- **KNN** and **ALS** showed moderate performance.
+- **Cold Start** and **Sparsity** issues affected ALS and KNN.
 
 ## Recommendations
+- Use SVD for personalized recommendations
+- Consider hybrid models to address cold start
+- Optimize hyperparameter tuning for scalability
+- Enrich metadata using external sources via `links.csv`
+
+## Future Work
+- Integrate deep learning models for hybrid recommendations
+- Explore temporal dynamics using timestamps
+- Add user demographics for enhanced personalization
+- Deploy model as an API for real-time recommendations
+
+## Contributors
+1. Hezron Rumenya
+2. Eric Metobo
+3. Joackim Kisienya
+4. Joy Sila
+5. Lynn Kyalo
+6. Newton Njeri
