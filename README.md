@@ -1,5 +1,6 @@
 # Recommendation Systems Project
-![Recommendation systems](images/Recommendation_system.PNG)
+
+![Recommendation systems](Images/Recommendation_system.PNG)
 
 ## 📄 Project Description
 
@@ -37,48 +38,49 @@ The 4 datasets offer a comprehensive foundation for a robust movie recommendatio
 
 ### Movies.csv
 Structure
--**Rows: 9,742**
--**Columns: movieId, title, genres**
+
+- **Rows: 9,742**
+- **Columns: movieId, title, genres**
 Purpose
 Contains metadata about movies.
 Genres are useful for:
 **Content-based filtering (e.g., recommending similar genre movies)**
--Genre-specific recommendations**
--Enriching user profiles with genre preferences**
+- Genre-specific recommendations**
+- Enriching user profiles with genre preferences**
 
 ### Ratings Dataset
 Structure
--**Rows: 100,836**
--**Columns: userId, movieId, rating, timestamp**
+- **Rows: 100,836**
+- **Columns: userId, movieId, rating, timestamp**
 Purpose
 **Core dataset for collaborative filtering.**
 Enables:
--User-item interaction modeling**
--Predicting ratings for unseen movies**
--Building user-user or item-item similarity matrices**
+- User-item interaction modeling**
+- Predicting ratings for unseen movies**
+- Building user-user or item-item similarity matrices**
 
 ### Links Dataset
 Structure
--**Rows: 9,742**
--**Columns: movieId, imdbId, tmdbId**
+- **Rows: 9,742**
+- **Columns: movieId, imdbId, tmdbId**
 Purpose
 **Serves as a bridge to external metadat sources by mapping internal movieId to external databases (IMDb, TMDb).**
 Useful for:
--Enriching movie metadata (e.g., posters, cast, reviews)**
--Integrating with external APIs**
--Improving user experience with richer content**
+- Enriching movie metadata (e.g., posters, cast, reviews)**
+- Integrating with external APIs**
+- Improving user experience with richer content**
 
 ### Tags dataset
 Structure
-**Rows: 3,683**
-**Columns: userId, movieId, tag, timestamp**
+- **Rows: 3,683**
+- **Columns: userId, movieId, tag, timestamp**
 Purpose
 **Captures user-generated tags for movies.**
 Tags provide semantic context (e.g., “funny”, “dark comedy”, “Will Ferrell”) that can be used to:
--Enhance content-based filtering**
--Profile user preferences**
--Enable tag-based search**
--Cluster movies by themes or genres**
+- Enhance content-based filtering**
+- Profile user preferences**
+- Enable tag-based search**
+- Cluster movies by themes or genres**
 
 ## Data Preprocessing
 1. *Merging*: The 4 datasets were merged to create one dataframe that will be used for analysis. the final dataframe had 102,677 rows and 10 columns. 
@@ -91,15 +93,15 @@ Tags provide semantic context (e.g., “funny”, “dark comedy”, “Will Fer
 
 ## Visualizations
 ### Rating Distribution
-![Rating Distribution](rating_distribution.png)
+![Rating Distribution](Images/rating_distribution.png)
 Shows user rating behavior, with a bias toward higher ratings.
 
 ### User Activity
-![User Activity](user_activity_distribution.png)
+![User Activity](Images/user_activity_distribution.png)
 Displays number of ratings per user, highlighting active vs. passive users.
 
 ### Genre Distribution
-![Genre Distribution](genre_distribution.png)
+![Genre Distribution](Images/genre_distribution.png)
 Breakdown of movie genres, showing dominance of Drama and Comedy.
 
 ## Modeling Techniques
@@ -110,17 +112,17 @@ Implemented and tuned three recommendation models:
 
 ## Evaluation Metrics
 - **RMSE**: Measures rating prediction accuracy
-- **Precision@10 & Recall@10**: Evaluate relevance of top-N recommendations
+- **Precision & Recall**: Evaluate relevance of top-N recommendations
 
 ### Model Performance Comparison
 #### RMSE
-![RMSE Comparison](rmse_comparison.png)
+![RMSE Comparison](Images/rmse_comparison.png)
 
-#### Precision@10
-![Precision Comparison](precision_comparison.png)
+#### Precision
+![Precision Comparison](Images/precision_comparison.png)
 
-#### Recall@10
-![Recall Comparison](recall_comparison.png)
+#### Recall
+![Recall Comparison](Images/recall_comparison.png)
 
 ## Key Findings
 - **SVD** outperformed other models with lowest RMSE and highest precision/recall.
